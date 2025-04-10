@@ -31,3 +31,12 @@ function processOrder() {
 function thankYouMessage() {
   alert("Thank you for your message.");
 }
+
+
+function viewCart() {
+  if (cartCount > 0) {
+    alert("You have " + cartCount + " item(s) in your cart.");
+  } else {
+    alert("Your cart is currently empty.");
+  }
+}
