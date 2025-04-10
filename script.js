@@ -1,9 +1,4 @@
-
 let cartCount = 0;
-
-function subscribe() {
-  alert("Thank you for subscribing.");
-}
 
 function addToCart() {
   cartCount++;
@@ -27,11 +22,6 @@ function processOrder() {
     alert("Cart is empty.");
   }
 }
-
-function thankYouMessage() {
-  alert("Thank you for your message.");
-}
-
 
 function viewCart() {
   if (cartCount > 0) {
