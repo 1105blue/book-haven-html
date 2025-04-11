@@ -1,9 +1,12 @@
 
 function subscribe() {
-  const email = document.getElementById("subscribe-email").value.trim();
-  if (email === "") {
+  const emailInput = document.getElementById("subscribe-email");
+  const email = emailInput.value.trim();
+
+  if (!email) {
     alert("Please enter a valid email address.");
   } else {
     alert("Thank you for subscribing!");
+    emailInput.value = "";
   }
 }
