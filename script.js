@@ -1,3 +1,5 @@
+// Existing Functions
+
 function addToCart(item) {
   let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
   cart.push(item);
@@ -46,3 +48,33 @@ function saveCustomOrder() {
   localStorage.setItem("customOrder", JSON.stringify(order));
   alert("Your custom order info has been saved!");
 }
+
+
+// Subscribe Feature Validation Code
+
+document.getElementById("subscribeForm").addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevent the form from submitting immediately
+
+  // Clear any previous error message
+  const errorMsg = document.getElementById("errorMsg");
+  errorMsg.textContent = '';
+
+  // Retrieve and trim the email input value
+  const emailInput = document.getElementById("subscribeEmail").value.trim();
+
+  // Basic email validation regex pattern
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  // Check if the email matches the pattern
+  if (!emailRegex.test(emailInput)) {
+    errorMsg.textContent = "Please enter a valid email address.";
+    return;
+  }
+
+  // If validation passes, perform your subscribe action (e.g., send an AJAX request)
+  // For now, we'll simply alert a message
+  alert("Thank you for subscribing!");
+
+  // Optionally, reset the form after successful submission
+  document.getElementById("subscribeForm").reset();
+});
