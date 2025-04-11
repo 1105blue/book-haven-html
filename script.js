@@ -46,13 +46,3 @@ function saveCustomOrder() {
   localStorage.setItem("customOrder", JSON.stringify(order));
   alert("Your custom order info has been saved!");
 }
-
-
-function subscribe() {
-  const email = document.getElementById("subscribe-email").value;
-  if (email.trim() === "") {
-    alert("Please enter a valid email address.");
-  } else {
-    alert("Thank you for subscribing!");
-  }
-}
