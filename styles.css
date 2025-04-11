@@ -1,5 +1,4 @@
-body { font-family: Arial, sans-serif; background: #fff; color: #333; }
-header { background-color: #5C2E5C; color: #fff; padding: 1em; text-align: center; }
-footer { background-color: #2E2E4E; color: white; padding: 1em; text-align: center; }
-button { background-color: #3E5641; color: white; padding: 0.5em 1em; border: none; cursor: pointer; }
-input[type="email"] { padding: 0.5em; }
+body { font-family: Arial; margin: 0; padding: 0; }
+header, footer { background-color: #5C2E5C; color: white; text-align: center; padding: 1rem; }
+main { padding: 20px; }
+button { margin-top: 10px; }
