@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="styles.css">
   <meta charset="UTF-8">
   <title>Gallery - Book Haven</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
@@ -19,19 +19,18 @@
     <h2>Our Products</h2>
     <table>
       <tr>
-        <td><img src="book1.jpg" alt="Book 1"><br><button onclick="addToCart()">Add to Cart</button></td>
-        <td><img src="book2.jpg" alt="Book 2"><br><button onclick="addToCart()">Add to Cart</button></td>
-        <td><img src="book3.jpg" alt="Book 3"><br><button onclick="addToCart()">Add to Cart</button></td>
+        <td><img src="book1.jpg" alt="Book 1"><br><button onclick="addToCart('Book 1')">Add to Cart</button></td>
+        <td><img src="book2.jpg" alt="Book 2"><br><button onclick="addToCart('Book 2')">Add to Cart</button></td>
+        <td><img src="book3.jpg" alt="Book 3"><br><button onclick="addToCart('Book 3')">Add to Cart</button></td>
       </tr>
     </table>
-  <button onclick="clearCart()">Clear Cart</button>
-<button onclick="processOrder()">Process Order</button>
-<button onclick="viewCart()">View Cart</button>
-</main>
+    <button onclick="viewCart()">View Cart</button>
+    <button onclick="clearCart()">Clear Cart</button>
+    <button onclick="processOrder()">Process Order</button>
+  </main>
   <footer>
-    <p>View Cart | Contact Info</p>
-  <button onclick="subscribe()">Subscribe</button>
-</footer>
+    <p>Contact Info</p>
+  </footer>
   <script src="script.js"></script>
 </body>
 </html>

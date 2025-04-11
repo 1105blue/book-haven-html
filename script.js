@@ -1,18 +1,23 @@
-
-let cartCount = 0;
-
-function subscribe() {
-  alert("Thank you for subscribing.");
-}
-
-function addToCart() {
-  cartCount++;
+function addToCart(item) {
+  let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+  cart.push(item);
+  sessionStorage.setItem("cart", JSON.stringify(cart));
   alert("Item added to the cart.");
 }
 
+function viewCart() {
+  let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+  if (cart.length > 0) {
+    alert("Items in cart:\n" + cart.join("\n"));
+  } else {
+    alert("Your cart is currently empty.");
+  }
+}
+
 function clearCart() {
-  if (cartCount > 0) {
-    cartCount = 0;
+  let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+  if (cart.length > 0) {
+    sessionStorage.removeItem("cart");
     alert("Cart cleared.");
   } else {
     alert("No items to clear.");
@@ -20,23 +25,24 @@ function clearCart() {
 }
 
 function processOrder() {
-  if (cartCount > 0) {
+  let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+  if (cart.length > 0) {
+    sessionStorage.removeItem("cart");
     alert("Thank you for your order.");
-    cartCount = 0;
   } else {
     alert("Cart is empty.");
   }
 }
 
-function thankYouMessage() {
-  alert("Thank you for your message.");
-}
-
-
-function viewCart() {
-  if (cartCount > 0) {
-    alert("You have " + cartCount + " item(s) in your cart.");
-  } else {
-    alert("Your cart is currently empty.");
+function saveCustomOrder() {
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const message = document.getElementById("message").value.trim();
+  if (!name || !email || !message) {
+    alert("Please fill out all fields.");
+    return;
   }
+  const order = { name, email, message };
+  localStorage.setItem("customOrder", JSON.stringify(order));
+  alert("Your custom order info has been saved!");
 }

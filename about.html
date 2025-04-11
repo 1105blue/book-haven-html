@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="styles.css">
   <meta charset="UTF-8">
   <title>About Us - Book Haven</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
@@ -18,21 +18,20 @@
   <main>
     <h2>About Us</h2>
     <p>We’re all about inspiring reading and community!</p>
-    <h2>Send Us Your Feedback</h2>
-    <form>
+    <h2>Custom Order Form</h2>
+    <form onsubmit="saveCustomOrder(); return false;">
       <label for="name">Name:</label><br>
       <input type="text" id="name" name="name"><br>
       <label for="email">Email:</label><br>
       <input type="email" id="email" name="email"><br>
       <label for="message">Message:</label><br>
       <textarea id="message" name="message"></textarea><br>
-      <button type="button" onclick="thankYouMessage()">Submit</button>
+      <button type="submit">Submit</button>
     </form>
   </main>
   <footer>
-    <p>Business Hours: Mon-Fri 9am–8pm | Sat 10am–6pm | Sun 11am–5pm</p>
-  <button onclick="subscribe()">Subscribe</button>
-</footer>
+    <p>Business Hours: Mon–Sat 10am–6pm</p>
+  </footer>
   <script src="script.js"></script>
 </body>
 </html>
