@@ -6,6 +6,33 @@
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
 </head>
+ // Attach an event listener to the subscribe form
+document.getElementById("subscribeForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent the form from submitting immediately
+
+    // Clear any previous error message
+    const errorMsg = document.getElementById("errorMsg");
+    errorMsg.textContent = '';
+
+    // Retrieve and trim the email input value
+    const emailInput = document.getElementById("subscribeEmail").value.trim();
+
+    // Basic email validation regex pattern
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    // Check if the email matches the pattern
+    if (!emailRegex.test(emailInput)) {
+        errorMsg.textContent = "Please enter a valid email address.";
+        return;
+    }
+
+    // If validation passes, perform your subscribe action (e.g., send an AJAX request)
+    // For now, we'll simply alert a message
+    alert("Thank you for subscribing!");
+
+    // Optionally, reset the form after successful submission
+    document.getElementById("subscribeForm").reset();
+});   
 <body>
     <header>
         <img src="Final LOgo.png" alt="Book Haven Logo" id="logo" width="100">
@@ -30,11 +57,11 @@
         </section>
     </main>
     <footer>
-        <form onsubmit="return validateSubscribe();">
-            <input type="email" id="subscribeEmail" placeholder="Enter your email" required>
-            <button type="submit">Subscribe</button>
-        </form>
-        <p>Contact us | Follow us on social media</p>
-    </footer>
-</body>
-</html>
+        <form id="subscribeForm" novalidate>
+    <input type="email" id="subscribeEmail" placeholder="Enter your email" required>
+    <button type="submit">Subscribe</button>
+    <!-- Element for displaying error messages -->
+    <span id="errorMsg" aria-live="polite" style="color: red;"></span>
+</form>
+<p>Contact us | Follow us on social media</p>
+
